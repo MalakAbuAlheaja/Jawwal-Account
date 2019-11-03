@@ -1,0 +1,26 @@
+
+.mainContainer {
+ background-image: url("../images/signUp-background.PNG"); 
+ background-size: cover;
+ height:1000px ;
+ .content {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    text-align: right;    
+}
+h2 {
+    text-align: center;
+     color: $white;;
+    } 
+
+}
+.footer-copyright {
+    height: 46px;
+    p {
+        margin-top:10px;
+        text-align: center;
+    }
+    
+}
