@@ -1,0 +1,255 @@
+﻿
+
+.auth-page {
+    width: 100%;
+    background-image: url('../assets/images/login-background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 13%;
+    padding-bottom: 5%;
+    padding-left: calc(35% - 14px);
+
+    form {
+        text-align: right;
+    }
+
+    .register-page {
+        @extend .popup-card;
+
+        .gradient-button {
+            background-image: linear-gradient(to bottom, $master-green, #69bf4b);
+            background-color: currentColor;
+        }
+
+        .phone-intro-number {
+            font-family: DINNextLTArabic;
+            @include font-size(16);
+            @include line-height(12.5);
+            border-radius: ($unit * 2.75) 0 0 ($unit * 2.75) !important;
+            background-color: greenFilter(0.07);
+            color: $master-black;
+        }
+
+        .verify-phone-number {
+            font-family: DINNextLTArabic;
+            @include font-size(14);
+            @include line-height(14.3);
+            letter-spacing: 0.3px;
+            color: $master-green;
+            cursor: pointer;
+        }
+
+        .checkbox-container {
+            width: 100%;
+            padding-left: $sub-unit * 11;
+
+            .checkbox-label {
+                @include line-height(12.5);
+                letter-spacing: 0.34px;
+                color: black;
+                margin-top: $sub-unit * 0.75;
+            }
+        }
+
+        .fileContainer {
+            height: $sub-unit * 11;
+            width: 100%;
+            position: relative;
+
+            .Browse-files {
+                position: relative;
+                bottom: $sub-unit * 11;
+                width: 84px;
+                height: 100%;
+                @include border-radius(22px);
+                padding-top: $sub-unit * 3.5;
+                background-color: $master-blue;
+                @include font-size(14);
+                @include line-height(14.3);
+                letter-spacing: 0.3px;
+                text-align: center;
+                color: $white;
+                cursor: pointer;
+            }
+
+            .file-input.hide {
+                position: absolute;
+                top: 0;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .file-trigger {
+                cursor: pointer;
+                padding-right: 84px;
+            }
+        }
+    }
+
+    .popup-card {
+        max-width: 463px;
+        @include border-radius(16px);
+        background-color: $white;
+        margin-right: auto;
+
+        form {
+            text-align: right;
+        }
+
+        .popup-header {
+            padding: 0 ($sub-unit * 10);
+            height: 96px;
+            border-top-right-radius: $sub-unit * 4;
+            border-top-left-radius: $sub-unit * 4;
+            background-color: greenFilter(0.05);
+            border-bottom: 1px solid $grey;
+
+            .popup-header-content {
+                .Already-have-an-account {
+                    width: auto;
+                    @include font-size(14);
+                    font-weight: normal;
+                    @include line-height(17.1);
+                    letter-spacing: normal;
+                    color: $darkgrayish-cyan;
+                    padding-top: $sub-unit * 1.25;
+
+                    .signup-link {
+                        font-weight: bold;
+                        color: $master-blue;
+                    }
+                }
+            }
+        }
+
+        .popup-body {
+            padding: 0 ($sub-unit * 10) ($sub-unit * 10);
+
+            .timepicker-container {
+                max-width: 180px;
+            }
+
+            .bootstrap-datetimepicker-widget {
+                max-width: 190px;
+                width: 100%;
+            }
+
+            .form-group {
+                margin-top: ($sub-unit * 10);
+                color: $master-black;
+
+                .checkbox {
+                    margin-top: ($sub-unit * 10);
+                }
+            }
+
+            .forgot-password-label {
+                font-family: DINNextLTArabic;
+                @include font-size(14);
+                @include line-height(14.3);
+                letter-spacing: normal;
+                color: $master-green;
+            }
+        }
+    }
+}
+
+.manage-page {
+    @extend .auth-page;
+    background: none;
+    padding: 0;
+    text-align: right;
+    margin-top: 56px;
+    margin-bottom: 52px;
+
+    .account-page {
+        @extend .popup-card;
+        border-radius: 16px;
+        box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.27), 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        margin-right: 0;
+        padding-top: 1px;
+        margin-top: 32px;
+    }
+}
+
+    @media screen and (max-width: 768px ) {
+
+        .auth-page {
+            background-size: auto;
+            background-position: center;
+            padding: 0%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .popup-card {
+                margin: 0 auto;
+            }
+
+            .register-page {
+
+                .checkbox-container {
+                    padding-left: 0;
+                }
+            }
+        }
+        .manage-page {
+
+            .account-page {
+                padding-top: 10px;
+                margin-top: 20px;
+            }
+        }
+    }
+@media screen and (max-width: 463px ) {
+
+    .auth-page {
+        height: auto !important;
+
+        .popup-card {
+            @include border-radius(0px);
+            margin: 0;
+
+            .popup-header {
+                @include border-radius(0px);
+
+                .popup-header-content {
+                    .Already-have-an-account {
+                        @include font-size(10);
+                    }
+                }
+            }
+
+            .confirmation-label {
+                @include font-size(18);
+            }
+
+            .confirmation-body {
+                @include font-size(14);
+            }
+        }
+    }
+
+    .manage-page {
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 20px;
+
+        .manage-page-header {
+            margin-right: 1.5rem;
+            font-size: 20px;
+        }
+        
+        .account-page {
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+    }
+
+}
+
+
+@media screen and (min-height: 1024px ) {
+    //wrapper has h-100
+}

@@ -1,0 +1,25 @@
+﻿.time-picker-label {
+    font-family: DINNextLTArabic;
+    @include font-size(16);
+    @include line-height(12.5);
+    border-radius: 0 ($unit * 2.75) ($unit * 2.75) 0 !important;
+    background-color: $white;
+    color: $master-black;
+    padding-left: 2px;
+    padding-bottom: 7px;
+}
+
+.time-picker-input {
+    background-image: url('../assets/images/drop-down-icon.svg');
+    background-repeat: no-repeat;
+    background-position: $sub-unit * 2.5;
+    border-right: 0px;
+    max-width: 180px;
+    cursor: pointer;
+
+    &:focus {
+        box-shadow: none;
+        border-color: $master-very-light-grey;
+        outline: 0;
+    }
+}

@@ -1,0 +1,186 @@
+﻿$sidebar-p-b: rem(82);
+
+.sidebar-wrapper {
+    text-align: right;
+    position: fixed;
+    width: 320px;
+    -webkit-transition: width 0.5s ease-in-out; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s ease-in-out;
+
+    .logo {
+        padding-bottom: rem(30);
+
+        .nav-link {
+            padding: 0;
+        }
+    }
+
+    .list-group {
+        -webkit-transition: width .5s ease-out;
+        -moz-transition: width .5s ease-out;
+        -o-transition: width .5s ease-out;
+        transition: width .5s ease-out;
+
+        .jw-badge {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include badge(rgba(49, 61, 72,0.08), 20px);
+        }
+
+        .item {
+            border: 0;
+            margin: rem(20) 0;
+            padding-left: 0;
+            padding-right: 0;
+
+            > div {
+                position: relative;
+
+                .logoimg {
+                    margin-left: rem(16);
+                }
+
+                .dropdown-icon {
+                    background-image: url("../../assets/images/drop-down-icon.svg");
+                    width: rem(20);
+                    height: rem(20);
+                    position: absolute;
+                    left: 0;
+                }
+                /*.collapse-menue-icon {
+                    background-image: url("../../assets/images/next.svg");
+                    width: rem(40);
+                    height: rem(40);
+                    background-color: $master-very-light-green;
+                    background-repeat: no-repeat;
+                    border-radius: 50%;
+                    background-position: center;
+                }*/
+                img {
+                    width: rem(40);
+                    height: rem(40);
+                }
+
+                .menu-collapsed {
+                    padding-right: rem(10);
+
+                    &:hover {
+                        color: $master-green;
+                    }
+                }
+            }
+
+            &.list-group-item[aria-expanded="true"] {
+                .dropdown-icon {
+                    background-image: url("../../assets/images/drop-up-icon.svg");
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &.selected {
+                p {
+                    color: $master-green;
+                }
+            }
+        }
+
+        #manageCamp {
+            padding-right: rem(35);
+
+            .list-group-item {
+                padding: rem(7.5) 0;
+
+                &:hover, &.active {
+                    color: unset;
+                    background-color: unset;
+
+                    p {
+                        color: $master-green;
+                    }
+                }
+            }
+        }
+    }
+
+    .collapse-menue-icon {
+        background-image: url("../../assets/images/next.svg");
+        width: rem(40);
+        height: rem(40);
+        background-color: $master-very-light-green;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        background-position: center;
+    }
+
+    .collapse-section {
+        position: absolute;
+        bottom: 50px;
+        margin: 0;
+        padding: 0;
+
+        #collapse-text {
+            font-size: rem(13);
+            margin-right: 10px;
+        }
+    }
+
+    &.sidebar-collapsed {
+        padding: rem(24) rem(40);
+        width: 125px;
+
+        .collapse-menue-icon {
+            transform: rotate(180deg);
+        }
+
+        .menu-collapsed, .sidebar-submenu {
+            min-width: 0px !important;
+        }
+    }
+
+    &.sidebar-expanded {
+        padding: rem(24) rem(40) $sidebar-p-b rem(30);
+
+        .menu-collapsed, .sidebar-submenu {
+            transition: min-width 0.5s ease-in-out;
+        }
+    }
+}
+
+    #wrapper {
+        &.toggled {
+            .sidebar-wrapper {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 769px) {
+        .close-Nav {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .sidebar-wrapper {
+            padding-right: 0;
+            position: absolute;
+            z-index: 111111;
+            background-color: white;
+            margin-right: -1000px;
+            width: 250px;
+            transition: margin-right .5s ease-in-out;
+
+            .close-Nav {
+                position: absolute;
+                top: 7px;
+                left: 7px;
+
+                .close-icone {
+                    background-color: $master-black;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }

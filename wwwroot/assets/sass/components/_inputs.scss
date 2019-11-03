@@ -1,0 +1,201 @@
+﻿input[type="time"],
+input[type="email"],
+input[type="text"],
+input[type="file"],
+input[type="number"],
+input[type="password"] {
+    height: $sub-unit * 11;
+    width: 100%;
+    @include font-size(16);
+    @include border-radius(22px);
+    border: solid 1px $master-very-light-grey;
+    text-indent: $sub-unit;
+    letter-spacing: 0.34px;
+    padding-bottom: $unit * 0.75;
+
+    &::-webkit-input-placeholder {
+        letter-spacing: 0.34px;
+        color: $dark-grey;
+        padding-bottom: $unit;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin: 0;
+    }
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+//password input
+input[type="password"] {
+    &::-webkit-input-placeholder {
+        font-size: $unit * 1.25;
+        letter-spacing: 2.34px;
+        padding-bottom: $unit;
+    }
+}
+
+//time input
+input[type="time"] {
+    text-align: center;
+}
+
+//file input
+input[type="file"] {
+    padding-top: $sub-unit * 1.25;
+    padding-right: 0;
+
+    &::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+
+    &::-ms-browse {
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0;
+    }
+}
+
+@-moz-document url-prefix() {
+    input[type="file"] {
+        padding-top: 0;
+    }
+
+    .Browse-files {
+        width: 94px;
+        border-top-right-radius: 22px;
+        border-bottom-right-radius: 22px;
+    }
+}
+
+@supports (-moz-appearance:none) {
+    input[type="file"] {
+        padding-top: 0 !important;
+    }
+}
+//inputs with icons
+.phone-appended-input {
+    @extend input[type="text"];
+    border-radius: 0 ($unit * 2.75) ($unit * 2.75) 0 !important;
+    border-left: 0 !important;
+    text-align: left;
+}
+
+.appended-input {
+    @extend input[type="text"];
+    border-radius: ($unit * 2.75) 0 0 ($unit * 2.75) !important;
+    border-right: 0 !important;
+
+    &.dir-ltr {
+        border-radius: 0 ($unit * 2.75) ($unit * 2.75) 0 !important;
+    }
+}
+
+.verification-input {
+    @extend input[type="text"];
+    max-width: $sub-unit * 11 !important;
+    border-radius: 50% !important;
+    text-align: center;
+    padding-right: $sub-unit * 3;
+    font-weight: bold;
+    padding-bottom:0px !important;
+}
+
+.search-icon {
+    background-image: url('../assets/images/search-icon.svg');
+    border-radius: 0 ($unit * 2.75) ($unit * 2.75) 0 !important;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    box-shadow: 0 0.5px 0 0px rgba(0, 0, 0, 0.27), 0 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+//custom checkbox
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.rounded-checkbox {
+    width: $sub-unit * 9;
+    height: $sub-unit * 9;
+    margin-left: $sub-unit * 3;
+    border: solid 1px $master-very-light-grey;
+    background-color: $white;
+    border-radius: 50%;
+    vertical-align: middle;
+    outline: none;
+
+    &:checked {
+        background-position: center;
+        background-size: cover;
+        background: $master-green;
+        background-image: url('../assets/images/check2.svg');
+    }
+}
+
+//toggle-switch
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.checkbox-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $smoked-white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.checkbox-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 3px;
+    background-color: $master-dark-grey;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .checkbox-slider {
+    background-color: $master-light-green;
+}
+
+input:checked + .checkbox-slider:before {
+    background-color: $master-green;
+}
+
+
+input:checked + .checkbox-slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.checkbox-slider.round {
+    border-radius: 34px;
+}
+
+.checkbox-slider.round:before {
+    border-radius: 50%;
+}
+
+

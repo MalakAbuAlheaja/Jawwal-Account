@@ -1,0 +1,101 @@
+﻿@mixin box($backgroundColor) {
+    @include border-radius(20px);
+    padding: $unit * 3;
+    min-height: 132px;
+    width: 100%;
+    max-width: 272px;
+    height: 100%;
+    background-color: $backgroundColor;
+
+    @media (min-width: 992px) {
+        min-width: 172px;
+        max-width: 272px;
+        padding: $unit * 2;
+    }
+}
+
+@mixin oval($ovalColor) {
+    min-width: $sub-unit * 8;
+    min-height: $sub-unit * 7;
+    border-radius: 50%;
+    text-align: center;
+    padding: ($sub-unit * 1.25) $sub-unit ($sub-unit * 0.5) $sub-unit;
+    background-color: $ovalColor;
+    font-weight: bold;
+    color: $master-black;
+    position: absolute;
+    bottom: $sub-unit * 6;
+    right: $sub-unit * 6;
+
+    @media (max-width: 567px) {
+        right: $sub-unit * 4;
+    }
+}
+
+@mixin box-title($bulletColor) {
+    @include line-height(17.5);
+    position: relative;
+    text-align: right;
+    font-weight: bold;
+    padding-bottom: 42px;
+    padding-right: 22px;
+
+    &:before {
+        content: '\2022'; //content: "•"
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: $sub-unit * 7;
+        color: $bulletColor;
+    }
+
+    @media (max-width: 567px) {
+        padding-right: 0;
+
+        &:before {
+            position: relative;
+        }
+
+        span {
+            display: block;
+            padding: 12px 0 15px;
+        }
+    }
+}
+
+
+.green-box {
+    @include box(greenFilter(0.15));
+
+    .box-title {
+        @include box-title($master-green);
+    }
+
+    .box-count {
+        @include oval(greenFilter(0.33));
+    }
+}
+
+.blue-box {
+    @include box($filtered-master-blue);
+
+    .box-title {
+        @include box-title($master-blue);
+    }
+
+    .box-count {
+        @include oval($light-blue);
+    }
+}
+
+.orange-box {
+    @include box($very-light-orange);
+
+    .box-title {
+        @include box-title($master-orange);
+    }
+
+    .box-count {
+        @include oval($light-orange);
+    }
+}

@@ -1,0 +1,56 @@
+﻿//colors
+$master-green: #63bb40;
+$master-very-light-green: #f5faf2;
+$master-light-green: #ddf2d4;
+$master-orange: #ff9f00;
+$filtered-master-orange: rgba(255, 159, 0, 0.15);
+$master-red: #ff4343;
+$dark-red: #721c24;
+$filtered-dark-red: #f8d7da;
+$master-dark-grey: #a1a8ad;
+$filtered-master-dark-grey: rgba(161,168,173,0.17);
+$master-light-grey: #fbfdfa;
+$master-very-light-grey: #d4d7dc;
+$master-light-grey2: #f8faf7;
+$light-blue:rgba(0,168,188,0.33);//#00a8bc
+$master-blue: #00acbf;
+$filtered-master-blue: rgba(0, 172, 191, 0.15);//blue box
+$filtered-master-blue2: rgba(0, 172, 191, 0.09);//blue label
+$master-black: #313d48;
+$filtered-master-black: rgba(49,61,72,0.33);//dark oval
+$filtered-master-black2: rgba(49, 61, 72, 0.07);//dark box
+$white: #fff;
+$black: #000;
+$smoked-white: #efefef; 
+$darkgrayish-cyan: #93999a;
+$dark-grey: #979a9c;
+$dark-grey2: #898f95;
+$grey: rgba(151,151,151,0.39);
+$very-light-orange: rgba(255, 159, 0, 0.15);
+$light-orange: rgba(255, 159, 0, 0.33);
+$master-purple: #4e26a7;
+$filtered-master-purple: #d6ccef;
+
+@function greenFilter($opacity) {
+    $green-color: rgba(99, 187, 64, $opacity);
+    @return $green-color;
+}
+
+//units
+$unit: 8px;
+$sub-unit: 4px;
+
+//Bootstrap variables
+$navbar-padding-x: 6rem;
+$navbar-padding-y: 2rem;
+$navbar-padding-m-x: 1.6rem; 
+$navbar-padding-m-y: 2rem;
+$border-color: rgba(0, 0, 0, 0.08);
+$pagination-active-color: #65bc43;
+$pagination-active-bg: #eaf6e6;
+$pagination-active-border-color: #dee2e6;
+$pagination-color: #495057;
+$pagination-bg: #fff;
+$pagination-hover-color:  #65bc43;
+$pagination-hover-bg: #eaf6e6;
+$pagination-hover-border-color: #dee2e6;

@@ -1,0 +1,71 @@
+﻿.form-label {
+    font-family: DINNextLTArabic;
+    @include font-size(16);
+    @include line-height(12.5);
+    font-family: 'DINNextLTArabic';
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    color: $master-black;
+    margin-bottom: $unit;
+}
+
+.form-title {
+    font-family: 'DINNextLTArabic';
+    font-weight: bold;
+    @include font-size(24);
+    @include line-height(13.3);
+    letter-spacing: normal;
+    letter-spacing: normal;
+    color: $master-green;
+}
+
+//colored labels
+.activation-label {
+    font-family: 'DINNextLTArabic';
+    width: 70px;
+    height: $unit * 4;
+    @include border-radius(16px);
+    font-size: 12px;
+    font-weight: normal;
+    padding-top: 6px;
+    text-align: center;
+}
+.activated-label,
+.activation-status-4 {
+    @extend .activation-label;
+    background-color: greenFilter(0.1);
+    color: $master-green;
+}
+
+.deactivated-label,
+.canceled-label,
+.rejected-label,
+.activation-status-3,
+.activation-status-6,
+.activation-status-5 {
+    @extend .activation-label;
+    background-color: $filtered-master-dark-grey;
+    color: $dark-grey2;
+}
+
+.pending-label,
+.activation-status-1 {
+    @extend .activation-label;
+    background-color: $filtered-master-orange;
+    color: $master-orange;
+}
+
+.inactive-label {
+    @extend .activation-label;
+    background-color: $filtered-master-blue2;
+    color: $master-blue;
+}
+
+
+@media screen and (max-width: 768px ) {
+    .form-title {
+        @include font-size(20);
+    }
+}
+
+

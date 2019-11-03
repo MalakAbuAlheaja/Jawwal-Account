@@ -1,0 +1,30 @@
+﻿@mixin border-radius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// line-height- mixin
+@mixin line-height($line-height: 18) {
+    line-height: ($line-height/ 10) + rem;
+}
+
+// font-size mixin
+@mixin font-size($sizeValue: 14px) {
+    font-size: ($sizeValue / 10) + rem;
+}
+
+@function rem($sizeValue: 14px) {
+    @return ($sizeValue / 10) + rem;
+}
+
+@mixin badge($color, $size) {
+    border-radius: 100%;
+    background-color: $color;
+    width: $size;
+    height: $size;
+    font-size: calc(#{$size} * 0.6);
+    font-weight: bold;
+    text-align: center;
+    line-height: calc(#{$size} * 1.2);
+}

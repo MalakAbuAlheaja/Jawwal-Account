@@ -1,0 +1,14 @@
+﻿//base variables
+@import 'base/_variables.scss';
+
+//bootstarp
+@import 'vendor/bootstrap/bootstrap.scss';
+
+//base
+@import 'base/_base.scss';
+
+//componentes
+@import 'components/_components.scss';
+
+//pages
+@import 'pages/_pages.scss';
